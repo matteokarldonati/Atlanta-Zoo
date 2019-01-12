@@ -15,7 +15,7 @@ def staff():
     return render_template('staff/staff.html')
 
 
-@bp.route('/search_animal',  methods=['GET', 'POST'])
+@bp.route('/search_animal', methods=['GET', 'POST'])
 @login_required("STAFF")
 def search_animal():
     form = SearchAnimalForm.new()
@@ -47,10 +47,10 @@ def search_animal():
     result = db.query(sql).fetchall()
 
     items = [{'Name': result[i][0], 'Species': result[i][1], 'Exhibit': result[i][2], 'Age': result[i][3],
-              'Type': result[i][4], 'Link': 'search_animal/'+result[i][0]+'/'+result[i][1]} for i in range(len(result))]
+              'Type': result[i][4], 'Link': 'search_animal/' + result[i][0] + '/' + result[i][1]} for i in
+             range(len(result))]
 
     return render_template('staff/search_animal.html', form=form, items=items, title='Search Animal')
-
 
 
 @bp.route('/view_shows')
@@ -73,7 +73,7 @@ def animal_care(name, species):
 
     result = db.query(sql).fetchall()
     items1 = [{'Name': result[i][0], 'Species': result[i][1], 'Exhibit': result[i][2], 'Age': result[i][3],
-              'Type': result[i][4]} for i in range(len(result))]
+               'Type': result[i][4]} for i in range(len(result))]
 
     form = AnimalCareForm()
 

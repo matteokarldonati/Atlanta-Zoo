@@ -12,7 +12,7 @@ class DB:
         self.connection = pymysql.connect(host='localhost',
                                           user='test',
                                           password='test',
-                                          db='fake_db')
+                                          db='atlanta_zoo')
 
     def query(self, sql):
         try:

@@ -4,23 +4,24 @@
 
 {% block content %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-    <a class="navbar-brand" href="{{ url_for('main.home_page') }}">Atlanta Zoo</a>
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-  </div>
-</nav>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="{{ url_for('main.home_page') }}">Atlanta Zoo</a>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        </div>
+    </nav>
 
 
-    <h1 style = "color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 50px;
+    <h1 style="color: #111; font-family: 'Helvetica Neue', sans-serif; font-size: 50px;
     font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center;">
-     Login
+        Login
     </h1>
 
-<div class="content-section" style="margin-left: 30%; margin-right: 30%; margin-top: 10%;" >
+    <div class="content-section" style="margin-left: 30%; margin-right: 30%; margin-top: 10%;">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -59,11 +60,11 @@
     </div>
 
 
-<div class="border-top pt-3" style = "text-align: center;">
-    <small class = "text-muted">
-        Do Not Have An Account? <a class="ml-2", href="{{ url_for('auth.register') }}">Sign Up</a>
-    </small>
-</div>
+    <div class="border-top pt-3" style="text-align: center;">
+        <small class="text-muted">
+            Do Not Have An Account? <a class="ml-2" , href="{{ url_for('auth.register') }}">Sign Up</a>
+        </small>
+    </div>
 {% endblock content %}
 
 <!--  <span>{{ error }}</span> -->

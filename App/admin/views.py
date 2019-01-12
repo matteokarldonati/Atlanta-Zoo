@@ -1,3 +1,5 @@
+from datetime import datetime as dt
+
 import pymysql
 from flask import render_template, flash, redirect, url_for
 
@@ -5,7 +7,6 @@ from . import bp
 from .forms import AddAnimalForm, AddShowForm, ViewAnimalForm, ViewShowForm, SearchUser
 from ..__init__ import db
 from ..utils.utils import login_required
-from datetime import datetime as dt
 
 
 @bp.route('/')
@@ -59,13 +60,12 @@ def view_staff():
           f"(USERNAME = '{form.username.data}' or '{form.username.data}' = '') AND " \
           f"(EMAIL = '{form.email.data}' or '{form.email.data}' = '') ORDER BY {sort_by} {direction}"
 
-
     result = db.query(sql).fetchall()
 
     items = [{'Username': result[i][0], 'Email': result[i][1], 'Delete': 'delete_staff/' + result[i][0]} for i in
              range(len(result))]
 
-    return render_template('admin/view_staff.html', form= form, items=items, title='View Staff')
+    return render_template('admin/view_staff.html', form=form, items=items, title='View Staff')
 
 
 @bp.route('/delete_staff/<string:name>')

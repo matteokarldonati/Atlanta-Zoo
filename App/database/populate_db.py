@@ -3,13 +3,12 @@ from datetime import datetime as dt
 import pandas as pd
 import pymysql
 
-# from database_project.App.model.User import User
 from App.model.User import User
 
 
 def populate_animal(c):
     sql = (
-        "INSERT INTO fake_db.ANIMAL (NAME, SPECIES, TYPE, AGE, EXHIBIT) "
+        "INSERT INTO ANIMAL (NAME, SPECIES, TYPE, AGE, EXHIBIT) "
         "VALUES (%s, %s, %s, %s, %s)"
     )
 
@@ -27,7 +26,7 @@ def populate_animal(c):
 
 def populate_exhibit(c):
     sql = (
-        "INSERT INTO fake_db.EXHIBIT (NAME, WATER, SIZE) "
+        "INSERT INTO EXHIBIT (NAME, WATER, SIZE) "
         "VALUES (%s, %s, %s)"
     )
 
@@ -47,7 +46,7 @@ def populate_exhibit(c):
 
 def populate_user(c):
     sql = (
-        "INSERT INTO fake_db.USER (USERNAME, EMAIL, TYPE, PASSWORD_HASH) "
+        "INSERT INTO USER (USERNAME, EMAIL, TYPE, PASSWORD_HASH) "
         "VALUES (%s, %s, %s, %s)"
     )
 
@@ -70,7 +69,7 @@ def populate_user(c):
 
 def populate_visitor(c):
     sql = (
-        "INSERT INTO fake_db.VISITOR (USERNAME) "
+        "INSERT INTO VISITOR (USERNAME) "
         "VALUES (%s)"
     )
 
@@ -90,7 +89,7 @@ def populate_visitor(c):
 
 def populate_staff(c):
     sql = (
-        "INSERT INTO fake_db.STAFF (USERNAME) "
+        "INSERT INTO STAFF (USERNAME) "
         "VALUES (%s)"
     )
 
@@ -110,7 +109,7 @@ def populate_staff(c):
 
 def populate_admin(c):
     sql = (
-        "INSERT INTO fake_db.ADMIN (USERNAME) "
+        "INSERT INTO ADMIN (USERNAME) "
         "VALUES (%s)"
     )
 
@@ -130,7 +129,7 @@ def populate_admin(c):
 
 def populate_show(c):
     sql = (
-        "INSERT INTO fake_db.SHOW (NAME, DATE_TIME, HOST, EXHIBIT) "
+        "INSERT INTO SHOW (NAME, DATE_TIME, HOST, EXHIBIT) "
         "VALUES (%s, %s, %s, %s)"
     )
 

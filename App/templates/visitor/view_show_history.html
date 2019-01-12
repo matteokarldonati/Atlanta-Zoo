@@ -5,11 +5,11 @@
 {% include "nav_bar.html" %}
 {% block content %}
 
- <h1>
+    <h1>
         Show History
- </h1>
+    </h1>
 
-<div class="content-section" style="margin-left: 30%; margin-right: 30%; margin-top: 10%;">
+    <div class="content-section" style="margin-left: 30%; margin-right: 30%; margin-top: 10%;">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -84,8 +84,8 @@
                 {{ form.search(class="btn btn-outline-info") }}
             </div>
         </form>
- </div>
+    </div>
 
-{% include "table_temp.html" %}
+    {% include "table_temp.html" %}
 
 {% endblock content %}

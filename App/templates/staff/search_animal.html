@@ -7,11 +7,11 @@
 
 
 
- <h1>
+    <h1>
         Search Animal
- </h1>
+    </h1>
 
-<div class="content-section" style="margin-left: 30%; margin-right: 30%; margin-top: 10%;">
+    <div class="content-section" style="margin-left: 30%; margin-right: 30%; margin-top: 10%;">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
@@ -34,7 +34,7 @@
                         {{ form.species(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
                             {% for error in form.species.errors %}
-                               <p class=error><strong>Error:</strong> {{ error }} </p>
+                                <p class=error><strong>Error:</strong> {{ error }} </p>
                             {% endfor %}
                         </div>
                     {% else %}
@@ -47,14 +47,14 @@
                         {{ form.min_age(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
                             {% for error in form.min_age.errors %}
-                               <p class=error><strong>Error:</strong> {{ error }} </p>
+                                <p class=error><strong>Error:</strong> {{ error }} </p>
                             {% endfor %}
                         </div>
                     {% else %}
                         {{ form.min_age(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-                 <div class="form-group">
+                <div class="form-group">
                     {{ form.max_age.label(class="form-control-label") }}
                     {% if form.max_age.errors %}
                         {{ form.max_age(class="form-control form-control-lg is-invalid") }}
@@ -66,7 +66,7 @@
                     {% else %}
                         {{ form.max_age(class="form-control form-control-lg") }}
                     {% endif %}
-                 </div>
+                </div>
                 <div class="form-group">
                     {{ form.type.label(class="form-control-label") }}
                     {% if form.type.errors %}
@@ -125,46 +125,55 @@
                 {{ form.search(class="btn btn-outline-info") }}
             </div>
         </form>
- </div>
+    </div>
 
 
-<table id="myTable">
-   <tr>
-       {% for k in items[0] %}
-            <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child({{ loop.index }})')"> {{ k }} </th>
-       {% endfor %}
-   </tr>
-    {% for d in items %}
-   <tr class = "item">
-         {% for k in d %}
-             {% if k == 'Link' %}
-                <td><a href="{{ d[k] }}">Animal Care</a></td>
-             {% else %}
-                <td>{{ d[k] }}</td>
-             {% endif %}
-         {% endfor %}
-  </tr>
-   {% endfor %}
- </table>
+    <table id="myTable">
+        <tr>
+            {% for k in items[0] %}
+                <th onclick="w3.sortHTML('#myTable','.item', 'td:nth-child({{ loop.index }})')"> {{ k }} </th>
+            {% endfor %}
+        </tr>
+        {% for d in items %}
+            <tr class="item">
+                {% for k in d %}
+                    {% if k == 'Link' %}
+                        <td><a href="{{ d[k] }}">Animal Care</a></td>
+                    {% else %}
+                        <td>{{ d[k] }}</td>
+                    {% endif %}
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
 
-<style>
-td, th {
-  border: 1px solid #999;
-  padding: 0.5rem;
-  color: #111; font-family: 'Helvetica Neue', sans-serif;
+    <style>
+        td, th {
+            border: 1px solid #999;
+            padding: 0.5rem;
+            color: #111;
+            font-family: 'Helvetica Neue', sans-serif;
 
-}
+        }
 
+        th {
+            border-style: solid;
+            border-color: black;
+            background: rgb(255, 255, 255); /* Old browsers */
+            background: -moz-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(top, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(241, 241, 241, 1) 50%, rgba(225, 225, 225, 1) 51%, rgba(246, 246, 246, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f6f6f6', GradientType=0);
+        }
 
-th { border-style: solid; border-color: black; background: rgb(255,255,255); /* Old browsers */
-background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(241,241,241,1) 50%, rgba(225,225,225,1) 51%, rgba(246,246,246,1) 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(241,241,241,1) 50%,rgba(225,225,225,1) 51%,rgba(246,246,246,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f6f6f6',GradientType=0 );}
-
-
-table {width: 60%; margin-left:20%; margin-right:20%; margin-top: 5%; border-color: black; }
-</style>
+        table {
+            width: 60%;
+            margin-left: 20%;
+            margin-right: 20%;
+            margin-top: 5%;
+            border-color: black;
+        }
+    </style>
 
 
 {% endblock content %}

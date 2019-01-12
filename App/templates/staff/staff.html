@@ -2,12 +2,16 @@
 {% include "nav_bar.html" %}
 {% block content %}
 
-<div style = "text-align: center; margin: 10%; padding: 5px; text-decoration: none;">
-    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('staff.search_animal') }}" style="text-decoration: none; color: black;">Search Animal</a></button>
+    <div style="text-align: center; margin: 10%; padding: 5px; text-decoration: none;">
+        <button type="button" class="btn btn-outline-primary waves-effect"><a
+                href="{{ url_for('staff.search_animal') }}" style="text-decoration: none; color: black;">Search
+            Animal</a></button>
 
-    <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('staff.view_shows') }}" style="text-decoration: none; color: black;">Assigned Shows</a></button>
+        <button type="button" class="btn btn-outline-primary waves-effect"><a href="{{ url_for('staff.view_shows') }}"
+                                                                              style="text-decoration: none; color: black;">Assigned
+            Shows</a></button>
 
-</div>
+    </div>
 
 
 {% endblock content %}
